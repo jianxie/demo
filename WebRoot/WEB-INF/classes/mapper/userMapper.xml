@@ -8,4 +8,11 @@
     <select id="getUser" parameterType="java.lang.String" resultType="User">  
         select * from User where fname=#{name} limit 1 
     </select>  
+    <select id="getUsersByForeach" resultType="User">
+     select * from User where fname in
+     <foreach item="item" index="index" collection="array" open="(" separator="," close=")">
+     	#{item}     
+     </foreach>
+    
+    </select>
 </mapper>

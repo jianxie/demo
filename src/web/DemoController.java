@@ -1,6 +1,7 @@
 package web;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,12 @@ public class DemoController {
 	@ResponseBody
 	public User testMybatis(){
 		return userService.getUser("123");
+	}
+	
+	@RequestMapping("/testForeach")
+	@ResponseBody
+	public List<User> testForeach(){
+		String[] name = new String[]{"1", "2", "3"};
+		return userService.getUsersByForeach(name);
 	}
 }

@@ -1,5 +1,7 @@
 package service.impl;
 
+import java.util.List;
+
 import mapper.UserMapper;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +19,10 @@ public class UserService implements IUserService {
 	public User getUser(String name){
 		return userMapper.getUser(name);
 		
+	}
+
+	public List<User> getUsersByForeach(String[] name) {
+		// TODO Auto-generated method stub
+		return userMapper.getUsersByForeach(name);
 	}
 }
